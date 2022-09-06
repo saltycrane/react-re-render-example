@@ -1,5 +1,5 @@
 import { range } from "lodash";
-import { useState } from "react";
+import { memo, useCallback, useState } from "react";
 
 /**
  * OptimizedGridPage
@@ -7,9 +7,9 @@ import { useState } from "react";
 export default function OptimizedGridPage() {
   const [totalCount, setTotalCount] = useState(0);
 
-  const handleIncrement = () => {
+  const handleIncrement = useCallback(() => {
     setTotalCount((totalCount) => totalCount + 1);
-  };
+  }, []);
 
   return (
     <div
@@ -17,7 +17,7 @@ export default function OptimizedGridPage() {
         padding: 10,
       }}
     >
-      <h1>Optimized Grid (not yet)</h1>
+      <h1>Optimized Grid</h1>
       <TotalCount totalCount={totalCount} />
       <Grid onIncrement={handleIncrement} />
     </div>
@@ -55,13 +55,15 @@ type TCellProps = {
   onIncrement: () => void;
 };
 
-function Cell({ index, onIncrement }: TCellProps) {
+const Cell = memo(function Cell({ index, onIncrement }: TCellProps) {
   const [count, setCount] = useState(0);
 
   const handleClick = () => {
     setCount((count) => count + 1);
     onIncrement();
   };
+
+  console.log("[OptimizedGridPage.tsx]", "render");
 
   return (
     <div style={{ border: "1px solid #ccc", padding: 5 }}>
@@ -72,7 +74,7 @@ function Cell({ index, onIncrement }: TCellProps) {
       </small>
     </div>
   );
-}
+});
 
 /**
  * TotalCount

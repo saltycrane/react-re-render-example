@@ -63,6 +63,8 @@ function Cell({ index, onIncrement }: TCellProps) {
     onIncrement();
   };
 
+  console.log("[NonOptimizedGridPage.tsx]", "render");
+
   return (
     <div style={{ border: "1px solid #ccc", padding: 5 }}>
       <small>
