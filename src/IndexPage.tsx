@@ -19,6 +19,11 @@ export default function IndexPage() {
             <a>Optimized Grid</a>
           </Link>
         </li>
+        <li>
+          <Link href="/broken-memo-grid">
+            <a>Broken Memo Grid</a>
+          </Link>
+        </li>
       </ul>
     </div>
   );
