@@ -31,7 +31,7 @@ export default function BrokenMemoGridPage() {
                    the value outside of the component if it is constant 2.
                    memoize it using the `useMemo` hook. This is similar to the
                    need to `useCallback` for the `handleIncrement` click handler
-                   function.  */
+                   function. */
                 {}
               }
             />
