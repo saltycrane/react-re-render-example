@@ -1,5 +1,11 @@
 # react-re-render-example
 
+Three example pages with a grid of 100 cells to demonstrate re-rendering behavior when using React:
+
+- [Non-optimized example](http://localhost:3000/non-optimized-grid) - shows updating a cell causes all other cells to re-render
+- [Optimized example](http://localhost:3000/optimized-grid) - uses React's [`memo`](https://reactjs.org/docs/react-api.html#reactmemo) and [`useCallback`](https://reactjs.org/docs/hooks-reference.html#usecallback) so that only one cell is re-rendered on update
+- [Broken memo example](http://localhost:3000/broken-memo-grid) - shows how adding a prop can break memoization
+
 ## Usage
 
 - Install project dependencies and run the dev server
